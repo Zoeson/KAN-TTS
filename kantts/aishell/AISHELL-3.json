@@ -1,0 +1,8 @@
+{
+    "default": {
+        "test": {
+            "meta": "AISHELL-3.csv",
+            "file": "aishell3.zip"
+        }
+    }
+}

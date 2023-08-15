@@ -132,6 +132,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--voc_ckpt", type=str, required=True, help="Path to voc ckpt file"
     )
+
+    "--txt test.txt " \
+    "--output_dir res/SSB0009_syn " \
+    "--res_zip speech_sambert-hifigan_tts_zh-cn_multisp_pretrain_16k/resource.zip " \
+    "--am_ckpt training_stage/SSB0009_sambert_ckpt/ckpt/checkpoint_1100000.pth " \
+    "--voc_ckpt training_stage/SSB0009_hifigan_ckpt/ckpt/checkpoint_2100000.pth " \
+    "--speaker SSB0009"
     parser.add_argument(
         "--speaker",
         type=str,

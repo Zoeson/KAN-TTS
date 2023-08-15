@@ -1,0 +1,1 @@
+{"default":{"features":{"index":{"_type":"Value"},"wav":{"_type":"Audio"}},"splits":{"test":{"name":"test","dataset_name":"AISHELL-3"}}}}

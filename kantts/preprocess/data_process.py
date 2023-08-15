@@ -94,17 +94,17 @@ def gen_metafile(
 
 #  TODO: Zh-CN as default
 def process_data(
-    voice_input_dir,
-    voice_output_dir,
-    audio_config,
-    speaker_name=None,
+    voice_input_dir, # aishell3_16k/SSB0009
+    voice_output_dir, # training_stage/SSB0009_feats
+    audio_config,   # kantts/configs/audio_config_16k.yaml
+    speaker_name=None,  # SSB0009
     targetLang="PinYin",
     skip_script=False,
     se_model=None,
 ):
     foreignLang = "EnUS"
 
-    # check if the vocie is supported
+    # check if the voice is supported
     if not os.path.exists(os.path.join(voice_input_dir, "emotion_tag.txt")):
         emo_tag_path = None
     else:
@@ -210,7 +210,11 @@ def process_data(
     # TODO: train/valid ratio setting
     gen_metafile(voice_output_dir, fp_enable, ap.badcase_list)
 
-
+"python kantts/preprocess/data_process.py " \
+"--voice_input_dir aishell3_16k/SSB0009 " \
+"--voice_output_dir training_stage/SSB0009_feats " \
+"--audio_config kantts/configs/audio_config_16k.yaml " \
+"--speaker SSB0009"
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Dataset preprocessor")
     parser.add_argument("--voice_input_dir", type=str, required=True)
